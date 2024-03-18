@@ -1,7 +1,203 @@
+:root{          /* Variables */
+    --color-text: #0A3871;
+    --color-body: #F3F5FC;
+    --color-header: #F3F5FB;
+    --color-content: #F3F5FC;
+    --color-left-pane: #F3F5FC;
+    --color-right-pane: white;
+    --color-footer: white;
+}
+
 body{
-    display: inline-block;
-    background: #D8DFE8;
+    background: var(--color-body);
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+}
+
+textarea{
+    font-family: "Montserrat", sans-serif;
+}
+
+/* HEADER */
+
+header{
+    background: var(--color-header);
+}
+
+.header{
+    width: 90%;
+    margin: auto;
+}
+
+.header_logo{
+    margin: 20px 0 0 40px ;  /* Positionate the alura logo */
+}
+
+
+/* MAIN */
+
+.content{
+    background: var(--color-content);
+    width: 80%;
+    margin: auto 40px auto auto;
+    display: grid;
+    grid-template-columns: auto 336px;
+    min-height: calc(100vh - 91px -72px);
+    height: 600px;
+    align-items: end;
+}
+
+.left_pane{
+    background: var(--color-left-pane);
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.casilla_texto{
+    width: 80%;
+    font-size: 32px;
+    color: var(--color-text);
+    resize: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.casilla_texto::placeholder{
+    color: var(--color-text);
+}
+
+.left_pane_buttons{
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.encrypt_button{
+    max-width: 328px;
+    width: 40%;
+    height: 67px;
+    border-radius: 24px;
+    background-color: var(--color-text);
+    color: white;
+    font-size: 16px;
+}
+
+.unencrypt_button{
+    max-width: 328px;
+    width: 40%;
+    height: 67px;
+    border-radius: 24px;
+    background-color: #D8DFE8;
+    color: var(--color-text);
+    font-size: 16px;
+}
+
+
+.rigth_pane{
+    background: var(--color-right-pane);
+    height: calc(100% + 48px);
+    border-radius: 32px;
+    padding: 32px;
+    box-sizing: border-box; /* Adjust the box to the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    align-items: center;
+}
+
+.rigth_pane.adjust{
+    justify-content: space-between;
+}
+
+.image_no_text{
+    width: 100%;
+}
+
+.final_message{
+    font-size: 24px;
+    font-weight: bold;
+    background-color: white;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.final_message.adjust{
+    height: 70%;
+
+}
+
+.rigth_pane_info{
+    font-size: 16px;
+    background: rgb(233, 233, 233);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.copy_button{
+    max-width: 328px;
+    width: 40%;
+    height: 67px;
+    border-radius: 24px;
+    background-color: transparent;
+    color: var(--color-text);
+    font-size: 16px;
+}
+
+.hidden{
+    display: none;
+}
+
+footer{
+    background: var(--color-footer);
+    height: 50px;
+}
+
+@media screen and (max-width: 750px){
+    .content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 65% 35%;
+        width: auto;
+        margin: auto 40px;
+    }
+
+ /*    .left_pane{
+        height: 100%;
+    } */
+
+    .left_pane_buttons{
+        justify-content: center;
+    }
+
+    .encrypt_button, .unencrypt_button, .copy_button{
+        width: 45%;
+    }
+
+    .rigth_pane{
+        height: 100%;
+    }
+
+    .image_no_text{
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .encrypt_button, .unencrypt_button{
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .image_no_text{
+        display: none;
+    }
 }

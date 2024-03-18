@@ -7,18 +7,49 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href ="style.css">
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+    <header>
+        <div class="header">
+            <img class="header_logo" src="img/Logo.png">
+        </div>
+    </header>
+
     <main>
-        <form>
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" cols="70" rows="10"></textarea required>
-        </form>
+        <div class="content">
+            <div class="left_pane">
+                <textarea class="casilla_texto" placeholder="Ingresa tu codigo secreto"></textarea>
+    
+                <div class="left_footer">
+                    <img class="warning" src="img/bi_exclamation-circle-fill (1).png">
+                    <span>Solo letras minusculas y sin acentos</span> <!-- Class without attributes that uses only self space -->
+            
+
+                </div>
+
+                <div class="left_pane_buttons">
+                    <button class="encrypt_button" >Encriptar</button>
+                    <button class="unencrypt_button" >Desencriptar</button>
+                </div>
+            </div>
+    
+            <div class="rigth_pane adjust">
+                <img class="image_no_text" src="img/Muñeco.png">
+                <p class="final_message" >Ningun mensaje fue encontrado</p>
+                <p class="rigth_pane_info" >Ingresa el texto que desees encriptar</p>
+                <button class="copy_button hidden" >Copiar</button>
+            </div>
+        </div>
     </main>
 
-    <button>
-        Encriptar
-    </button>
+    <footer>
+        <p>Encrypter challenge made by Abraham Morales Arias</p>
+    </footer>
 </body>
 </html>
