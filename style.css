@@ -60,9 +60,9 @@ header{
 
 .casilla_texto{
     width: 80%;
+    height: 60vh;
     font-size: 32px;
     color: var(--color-text);
-    resize: none;
     background: none;
     border: none;
     outline: none;
@@ -72,14 +72,30 @@ header{
     color: var(--color-text);
 }
 
+.left_pane_legend{
+    display: flex;
+    margin-bottom: 16px;
+    flex-wrap: wrap;    
+    gap: 18px;
+}
+
 .left_pane_buttons{
     display: flex;
-    gap: 24px;
-    margin-top: 16px;
+    width: 100%;
+    margin-bottom: 16px;
+    flex-wrap: wrap;    
+    gap: 18px;
+}
+
+.left_footer{
+    display: flex;
+    margin-bottom: 16px;
     flex-wrap: wrap;
 }
 
 .encrypt_button{
+    border: 1px solid var(--color-text);
+    cursor: pointer;
     max-width: 328px;
     width: 40%;
     height: 67px;
@@ -89,7 +105,9 @@ header{
     font-size: 16px;
 }
 
-.unencrypt_button{
+.decrypt_button{
+    border: 1px solid var(--color-text);
+    cursor: pointer;
     max-width: 328px;
     width: 40%;
     height: 67px;
@@ -111,6 +129,7 @@ header{
     justify-content: center;
     gap: 32px;
     align-items: center;
+    box-shadow: 0px 24px 32px -8px black;
 }
 
 .rigth_pane.adjust{
@@ -124,24 +143,30 @@ header{
 .final_message{
     font-size: 24px;
     font-weight: bold;
-    background-color: white;
+    background-color: none;
+    border: none;
+    outline: none;
+    resize: none;
     color: var(--color-text);
     text-align: center;
 }
 
 .final_message.adjust{
     height: 70%;
-
+    font-weight: 400;
+    text-align: left;
 }
 
 .rigth_pane_info{
     font-size: 16px;
-    background: rgb(233, 233, 233);
+    background: transparent;
     color: var(--color-text);
     text-align: center;
 }
 
 .copy_button{
+    border: 1px solid var(--color-text);
+    cursor: pointer;
     max-width: 328px;
     width: 40%;
     height: 67px;
@@ -149,15 +174,34 @@ header{
     background-color: transparent;
     color: var(--color-text);
     font-size: 16px;
+    display: none;
+}
+
+.reset_button{
+    border: 1px solid var(--color-text);
+    cursor: pointer;
+    max-width: 328px;
+    width: 40%;
+    height: 67px;
+    border-radius: 24px;
+    background-color: var(--color-text);
+    color: white;
+    font-size: 16px;
+    display: none;
 }
 
 .hidden{
     display: none;
-}
+} 
 
 footer{
+    margin-top: 30px;
+    padding-top: 100px;
     background: var(--color-footer);
     height: 50px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
 }
 
 @media screen and (max-width: 750px){
@@ -176,7 +220,7 @@ footer{
         justify-content: center;
     }
 
-    .encrypt_button, .unencrypt_button, .copy_button{
+    .encrypt_button, .unencrypt_button, .copy_button, .reset_button{
         width: 45%;
     }
 
@@ -191,8 +235,8 @@ footer{
 
 
 
-@media screen and (max-width: 500px) {
-    .encrypt_button, .unencrypt_button{
+@media screen and (max-width: 400px) {
+    .encrypt_button, .unencrypt_button, .copy_button, .reset_button{
         max-width: 100%;
         width: 100%;
     }

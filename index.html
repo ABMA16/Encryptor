@@ -24,26 +24,27 @@
     <main>
         <div class="content">
             <div class="left_pane">
-                <textarea class="casilla_texto" placeholder="Ingresa tu codigo secreto"></textarea>
-    
-                <div class="left_footer">
-                    <img class="warning" src="img/bi_exclamation-circle-fill (1).png">
-                    <span>Solo letras minusculas y sin acentos</span> <!-- Class without attributes that uses only self space -->
-            
-
-                </div>
-
-                <div class="left_pane_buttons">
-                    <button class="encrypt_button" >Encriptar</button>
-                    <button class="unencrypt_button" >Desencriptar</button>
+                <textarea id="addText" class="casilla_texto" placeholder="Ingresa tu codigo secreto"></textarea>
+                <div class="left_pane_legend">
+                    <div class="left_footer">
+                        <img class="warning" src="img/bi_exclamation-circle-fill (1).png">
+                        <span>Solo letras minusculas y sin acentos</span> <!-- Class without attributes that uses only self space -->
+                    </div>
+                    <div class="left_pane_buttons">
+                        <button id="encryptButton" class="encrypt_button" >Encriptar</button>
+                        <button id="decryptButton" class="decrypt_button" >Desencriptar</button>
+                    </div>
                 </div>
             </div>
-    
-            <div class="rigth_pane adjust">
-                <img class="image_no_text" src="img/Muñeco.png">
-                <p class="final_message" >Ningun mensaje fue encontrado</p>
-                <p class="rigth_pane_info" >Ingresa el texto que desees encriptar</p>
-                <button class="copy_button hidden" >Copiar</button>
+            <div id="rightPane" class="rigth_pane">
+                <img id="imageNoText" class="image_no_text" src="img/Muñeco.png">
+
+                <textarea id="finalMessage" class="final_message" placeholder="Ningun mensaje fue encontrado"></textarea>
+
+                <p id="rightPaneInfo" class="rigth_pane_info" >Ingresa el texto que desees encriptar</p>
+
+                <button id="copyButton" class="copy_button" >Copiar</button>
+                <button id="resetButton" class="reset_button">Reset</button>
             </div>
         </div>
     </main>
@@ -51,5 +52,7 @@
     <footer>
         <p>Encrypter challenge made by Abraham Morales Arias</p>
     </footer>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>
