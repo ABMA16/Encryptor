@@ -26,6 +26,8 @@ const displayMessage = (newText) => {
 encryptButton.addEventListener("click", () => {
     const text = addText.value.toLowerCase();
     if (text == ""){
+        alert("Please add a text to encrypt.")
+    } else {
         function encrypt(newText){
             for (let i = 0; i < replace.length; i++){
                 if (newText.includes(replace[i][0])){
@@ -35,14 +37,14 @@ encryptButton.addEventListener("click", () => {
             return newText;
         }
         displayMessage(encrypt(text));
-    } else {
-        alert("Please add a text to encrypt.")
     }
 });
 
 decryptButton.addEventListener("click", () => {
     const text = addText.value.toLowerCase();
     if (text == "") {
+        alert("Please add a text to decrypt.")
+    } else {
         function decrypt(newText){
             for (let i = 0; i < replace.length; i++){
                 if (newText.includes(replace[i][1])){
@@ -52,8 +54,6 @@ decryptButton.addEventListener("click", () => {
             return newText;
         }
         displayMessage(decrypt(text));
-    } else {
-        alert("Please add a text to encrypt.")
     }
 });
 
